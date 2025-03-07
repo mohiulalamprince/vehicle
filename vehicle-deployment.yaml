@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vehicle-deployment
+  labels:
+    app: vehicle
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: vehicle
+  template:
+    metadata:
+      labels:
+        app: vehicle
+    spec:
+      containers:
+      - name: vehicle
+        image: mohiulalamprince/vehicle:latest
+        ports:
+        - containerPort: 80
+

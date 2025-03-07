@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: vehicle-service
+spec:
+  selector:
+    app: vehicle
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8082
+    nodePort: 32001
+  type: NodePort
